@@ -133,6 +133,15 @@
             >;
         };
 
+        Sym_Num {
+            bindings = <
+&kp EXCLAMATION    &kp JP_DQUOTE    &kp HASH         &kp DOLLAR      &kp PERCENT                         &kp JP_AMPERSAND  &kp JP_QUOTE       &kp JP_EQUAL     &kp JP_CARET      &kp JP_YEN
+&kp NUMBER_1       &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4    &kp NUMBER_5    &trans      &trans  &kp JP_PLUS       &kp JP_TILDE       &kp JP_PIPE      &kp JP_AT         &kp JP_COLON
+&kp NUMBER_6       &kp NUMBER_7     &kp NUMBER_8     &kp NUMBER_9    &kp NUMBER_0    &trans      &trans  &none             &kp JP_ASTERISK    &kp JP_BACKQUOTE &kp JP_UNDERSCORE &kp SEMICOLON
+&trans             &trans           &trans           &trans          &trans          &trans      &trans  &trans                                                                  &trans
+            >;
+        };
+
         ARROW {
             bindings = <
 &kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans  &trans  &trans  &trans
