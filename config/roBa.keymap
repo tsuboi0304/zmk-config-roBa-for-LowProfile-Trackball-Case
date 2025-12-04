@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE AT // "
 #define JP_AMPERSAND CARET // &
 #define JP_QUOTE AMPERSAND // '
@@ -29,6 +30,7 @@
 #define JP_HANZEN GRAVE // 半角/全角
 
 // スクロール量を変更
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 &mt {
@@ -69,6 +71,7 @@
 
         muhennkann {
             // bindings = <&to_layer_0 INT_MUHENKAN>;
+
             bindings = <&kp GRAVE>;
             key-positions = <11 10>;
         };
@@ -111,10 +114,12 @@
         };
 
         // 新しいスクロール動作の追加
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
     };
@@ -169,8 +174,8 @@
         MOUSE {
             bindings = <
 &kp F3     &kp F2          &kp UP_ARROW    &kp F4           &kp F5                         &kp F6  &kp F7              &kp F8    &kp F10              &kp RA(F11)
-&trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans     &trans      &trans  &trans  &mkp MB1            &mkp MB3  &mkp MB2             &kp F12
-&kp LC(Z)  &kp LC(X)       &kp LC(C)       &kp LC(V)        &kp LC(Y)  &trans      &trans  &trans  &kp LA(LEFT_ARROW)  &trans    &kp RA(RIGHT_ARROW)  &trans
+&trans     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans     &trans      &trans  &trans  &mkp MB1            &mkp MB3  &mkp MB2             &kp BACKSPACE
+&kp LC(Z)  &kp LC(X)       &kp LC(C)       &kp LC(V)        &kp LC(Y)  &trans      &trans  &trans  &kp LA(LEFT_ARROW)  &trans    &kp RA(RIGHT_ARROW)  &kp F12
 &trans     &trans          &trans          &trans           &trans     &trans      &trans  &trans                                                     &trans
             >;
         };
