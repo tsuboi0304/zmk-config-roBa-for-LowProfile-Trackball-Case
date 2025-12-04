@@ -29,7 +29,7 @@
 #define JP_HANZEN GRAVE // 半角/全角
 
 // スクロール量を変更
-#define ZMK_MOUSE_POINTING_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 &mt {
     flavor = "balanced";
@@ -107,7 +107,6 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
-            // 追加: スクロールのタップ時間を設定 (20ms)
             tap-ms = <20>;
         };
     };
