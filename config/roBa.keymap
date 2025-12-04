@@ -70,7 +70,8 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            //bindings = <&to_layer_0 INT_MUHENKAN>;
+            bindings = <&kp JP_HANZEN>;
             key-positions = <11 10>;
         };
 
@@ -112,12 +113,17 @@
         };
 
         // 新しいスクロール動作の追加
-
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
 
+        // Mac用スクロール動作の追加
+        scroll_down_up: behavior_sensor_rotate_mouse_wheel_up_down {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
             tap-ms = <20>;
         };
     };
@@ -143,6 +149,8 @@
 &kp Z   &kp X           &kp C           &kp V             &kp SEMICOLON  &trans      &kp NON_US_BACKSLASH  &kp G   &kp D              &kp M            &kp J            &kp B
 &trans  &trans          &trans          &trans            &trans         &trans      &trans                &trans                                                       &kp F12
             >;
+
+            sensor-bindings = <&scroll_down_up>;
         };
 
         NUM {
