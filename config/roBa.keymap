@@ -129,7 +129,7 @@
             bindings = <
 &kp Q             &mt LEFT_GUI W  &kp E         &kp R                        &kp T                                                          &kp Y        &kp U             &lt 5 I    &kp O    &kp P
 &kp A             &kp S           &kp D         &mt LEFT_SHIFT F             &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &kp SQT
-&mt LEFT_SHIFT Z  &kp X           &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &kp M             &kp COMMA  &kp DOT  &kp SLASH
+&mt LEFT_SHIFT Z  &kp X           &kp C         &kp V                        &kp B        &tog 1                             &kp SEMICOLON  &kp N        &kp M             &kp COMMA  &kp DOT  &kp SLASH
 &UserName         &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 4 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 2 ENTER                                        &kp DEL
             >;
 
@@ -138,10 +138,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&kp Q   &kp L           &kp U           &kp COMMA         &kp PERIOD                                       &kp F   &kp W              &kp R            &kp Y            &kp P
+&kp E   &mt LEFT_GUI I  &mt LEFT_ALT A  &mt LEFT_SHIFT O  &kp MINUS      &trans      &kp SLASH             &kp K   &mt RIGHT_SHIFT T  &mt RIGHT_ALT N  &mt RIGHT_GUI S  &kp H
+&kp Z   &kp X           &kp C           &kp V             &kp SEMICOLON  &trans      &kp NON_US_BACKSLASH  &kp G   &kp D              &kp M            &kp J            &kp B
+&trans  &trans          &trans          &trans            &trans         &trans      &trans                &trans                                                       &kp F12
             >;
         };
 
