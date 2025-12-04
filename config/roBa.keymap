@@ -4,6 +4,7 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
+
 #define JP_DQUOTE AT // "
 #define JP_AMPERSAND CARET // &
 #define JP_QUOTE AMPERSAND // '
@@ -91,6 +92,13 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        UserName: UserName {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(B) &kp LS(J) &kp N0 &kp N2 &kp LS(Z) &kp N0 &kp N6 &kp N2 &kp N1>;
+            label = "USERNAME";
+        };
     };
 
     behaviors {
@@ -104,10 +112,12 @@
         };
 
         // 新しいスクロール動作の追加
+
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
     };
@@ -120,7 +130,7 @@
 &kp Q             &mt LEFT_GUI W  &kp E         &kp R                        &kp T                                                          &kp Y        &kp U             &lt 5 I    &kp O    &kp P
 &kp A             &kp S           &kp D         &mt LEFT_SHIFT F             &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &kp SQT
 &mt LEFT_SHIFT Z  &kp X           &kp C         &kp V                        &kp B        &kp COLON                          &kp SEMICOLON  &kp N        &kp M             &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 4 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 2 ENTER                                        &kp DEL
+&UserName         &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 4 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 2 ENTER                                        &kp DEL
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -137,8 +147,8 @@
 
         NUM {
             bindings = <
-&kp ESCAPE      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH                            &kp JP_AMPERSAND  &kp JP_QUOTE     &kp JP_EQUAL      &kp JP_CARET       &kp JP_YEN
-&kp TAB         &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &trans            &trans  &kp JP_PLUS       &kp JP_TILDE     &kp JP_PIPE       &kp JP_AT          &kp BACKSPACE
+&trans          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH                            &kp JP_AMPERSAND  &kp JP_QUOTE     &kp JP_EQUAL      &kp JP_CARET       &kp JP_YEN
+&kp ESCAPE      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &trans            &trans  &kp JP_PLUS       &kp JP_TILDE     &kp JP_PIPE       &kp JP_AT          &kp BACKSPACE
 &kp COMMA       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS   &kp ASTERISK      &trans  &none             &kp JP_ASTERISK  &kp JP_BACKQUOTE  &kp JP_UNDERSCORE  &kp DELETE
 &kp LEFT_SHIFT  &kp NUMBER_0  &kp PERIOD    &trans        &trans     &trans            &trans  &trans                                                                  &trans
             >;
