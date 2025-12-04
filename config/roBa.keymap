@@ -118,6 +118,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
             tap-ms = <20>;
+        };
 
         // Mac用スクロール動作の追加
         scroll_down_up: behavior_sensor_rotate_mouse_wheel_up_down {
