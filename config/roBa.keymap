@@ -68,8 +68,8 @@
         };
 
         muhennkann {
-            //bindings = <&to_layer_0 INT_MUHENKAN>;
-            bindings = <&kp GRAVE>;
+            bindings = <&to_layer_0 INT_MUHENKAN>;
+            // bindings = <&kp GRAVE>;
             key-positions = <11 10>;
         };
 
