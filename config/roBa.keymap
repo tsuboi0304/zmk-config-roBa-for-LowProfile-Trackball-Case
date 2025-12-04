@@ -29,7 +29,7 @@
 #define JP_HANZEN GRAVE // 半角/全角
 
 // スクロール量を変更
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 100
+#define ZMK_MOUSE_POINTING_SCRL_VAL 100
 
 &mt {
     flavor = "balanced";
