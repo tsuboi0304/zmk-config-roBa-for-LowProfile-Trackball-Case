@@ -112,10 +112,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &mt LEFT_GUI W  &kp E         &kp R                        &kp T                                                                     &kp Y        &kp U             &kp I      &kp O    &kp P
-&mt LCTRL A       &mt LCTRL S     &kp D         &mt LEFT_SHIFT F             &kp G                   &kp LS(LG(S))                      &kp JP_PLUS    &kp H        &mt LEFT_SHIFT J  &kp K      &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X           &kp C         &kp V                        &kp B                   &tog 1                             &kp SEMICOLON  &kp N        &kp M             &kp COMMA  &kp DOT  &kp SLASH
-&UserName         &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_MUHENKAN      &kp BACKSPACE  &lt 2 ENTER                                        &kp LC(RA(DEL))
+&kp Q         &mt LEFT_GUI W  &kp E         &kp R                        &kp T                                                                     &kp Y        &kp U  &kp I      &kp O    &kp P
+&mt LSHIFT A  &mt LCTRL S     &kp D         &mt LEFT_SHIFT F             &kp G                   &kp LS(LG(S))                      &kp JP_PLUS    &kp H        &kp J  &kp K      &kp L    &mt RSHIFT MINUS
+&mt LCTRL Z   &kp X           &kp C         &kp V                        &kp B                   &tog 1                             &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&UserName     &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_MUHENKAN      &kp BACKSPACE  &lt 2 ENTER                             &kp LC(RA(DEL))
             >;
 
             sensor-bindings = <&scroll_up_down>;
