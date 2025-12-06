@@ -4,7 +4,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 // OS設定を日本語キーボードのまま使用するための変換定義
-
 #define JP_DQUOTE      AT               // "
 #define JP_AMPERSAND   CARET            // &
 #define JP_QUOTE       AMPERSAND        // '
@@ -30,7 +29,6 @@
 #define JP_HANZEN      GRAVE            // 半角/全角
 
 // スクロール量を変更
-
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 &mt {
@@ -38,9 +36,9 @@
     quick-tap-ms = <0>;
 };
 
-&trackball {
-    automouse-layer = <4>;
-    scroll-layers = <5>;
+// &trackball {
+   // automouse-layer = <4>;
+   // scroll-layers = <5>;
 
     // arrows {
     //     layers = <3>;
@@ -53,7 +51,7 @@
     //     wait-ms = <5>;
     //     tap-ms = <5>;
     // };
-};
+// };
 
 / {
     combos {
