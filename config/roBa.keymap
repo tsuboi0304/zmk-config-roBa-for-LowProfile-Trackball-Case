@@ -134,10 +134,10 @@
 
         NUM {
             bindings = <
-&trans          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH                            &kp JP_AMPERSAND  &kp JP_QUOTE     &kp JP_EQUAL      &kp JP_CARET       &kp JP_YEN
-&kp ESCAPE      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &trans            &trans  &kp JP_PLUS       &kp JP_TILDE     &kp JP_PIPE       &kp JP_AT          &kp BACKSPACE
-&kp COMMA       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS   &kp ASTERISK      &trans  &trans            &kp JP_ASTERISK  &kp JP_BACKQUOTE  &kp JP_UNDERSCORE  &kp DELETE
-&kp LEFT_SHIFT  &kp NUMBER_0  &kp PERIOD    &trans        &trans     &trans            &trans  &trans                                                                  &trans
+&trans          &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH                                  &kp JP_AMPERSAND  &kp JP_QUOTE     &kp JP_EQUAL      &kp JP_CARET       &kp JP_YEN
+&kp ESCAPE      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS     &trans               &trans  &kp JP_PLUS       &kp JP_TILDE     &kp JP_PIPE       &kp JP_AT          &kp BACKSPACE
+&kp COMMA       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_PLUS   &kp JP_ASTERISK      &trans  &trans            &kp JP_ASTERISK  &kp JP_BACKQUOTE  &kp JP_UNDERSCORE  &kp DELETE
+&kp LEFT_SHIFT  &kp NUMBER_0  &kp PERIOD    &trans        &trans        &trans               &trans  &trans                                                                  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -165,10 +165,10 @@
 
         SCROLLandMARK {
             bindings = <
-&trans           &trans         &trans    &kp SEMICOLON  &kp JP_COLON                      &kp JP_CARET      &kp JP_BACKQUOTE  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_AT
-&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH  &kp DOLLAR     &kp PERCENT   &trans      &trans  &kp JP_AMPERSAND  &kp JP_QUOTE      &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_EQUAL
-&trans           &trans         &trans    &trans         &trans        &trans      &trans  &kp JP_PIPE       &kp JP_TILDE      &kp JP_LBRACE    &kp JP_RBRACE    &kp JP_UNDERSCORE
-&trans           &trans         &trans    &trans         &trans        &trans      &trans  &trans                                                                &kp JP_YEN
+&trans           &kp JP_PLUS    &kp JP_ASTERISK  &kp SEMICOLON  &kp JP_COLON                      &kp JP_CARET      &kp JP_BACKQUOTE  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_AT
+&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT   &trans      &trans  &kp JP_AMPERSAND  &kp JP_QUOTE      &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_EQUAL
+&trans           &trans         &trans           &trans         &trans        &trans      &trans  &kp JP_PIPE       &kp JP_TILDE      &kp JP_LBRACE    &kp JP_RBRACE    &kp JP_UNDERSCORE
+&trans           &trans         &trans           &trans         &trans        &trans      &trans  &trans                                                                &kp JP_YEN
             >;
         };
 
