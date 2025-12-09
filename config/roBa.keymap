@@ -124,7 +124,7 @@
         Password: Password {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp N &kp A &kp M &kp T &kp K &kp DQT &kp N1 &kp N1>;
+            bindings = <&none &kp N &kp A &kp M &kp T &kp K &kp LEFT_BRACKET &kp N1 &kp N1>;
             label = "PASSWORD";
         };
     };
