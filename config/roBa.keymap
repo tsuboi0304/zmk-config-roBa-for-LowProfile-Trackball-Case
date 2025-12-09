@@ -94,6 +94,27 @@
             bindings = <&none &kp LS(B) &kp LS(J) &kp N0 &kp N2 &kp LS(Z) &kp N0 &kp N6 &kp N2 &kp N1>;
             label = "USERNAME";
         };
+
+        Paren: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK &kp LEFT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "NEW_MACRO";
+        };
+
+        Bracket: bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET &kp BACKSLASH &kp LEFT_ARROW>;
+            label = "BRACKET";
+        };
+
+        Brace: Brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACE &kp PIPE &kp LEFT_ARROW>;
+            label = "BRACE";
+        };
     };
 
     behaviors {
