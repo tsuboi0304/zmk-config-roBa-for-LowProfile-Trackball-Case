@@ -196,9 +196,9 @@
 
         SCROLLandMARK {
             bindings = <
-&trans           &kp JP_PLUS    &kp JP_ASTERISK  &kp SEMICOLON  &kp JP_COLON                      &kp JP_CARET      &kp JP_BACKQUOTE  &kp JP_LBRACKET  &kp JP_RBRACKET  &kp JP_AT
-&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT   &trans      &trans  &kp JP_AMPERSAND  &kp JP_QUOTE      &kp JP_LPAREN    &kp JP_RPAREN    &kp JP_EQUAL
-&trans           &trans         &trans           &trans         &trans        &trans      &trans  &kp JP_PIPE       &kp JP_TILDE      &kp JP_LBRACE    &kp JP_RBRACE    &kp JP_UNDERSCORE
+&trans           &kp JP_PLUS    &kp JP_ASTERISK  &kp SEMICOLON  &kp JP_COLON                      &kp JP_CARET      &kp JP_BACKQUOTE  &Bracket  &kp JP_RBRACKET  &kp JP_AT
+&kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH         &kp DOLLAR     &kp PERCENT   &trans      &trans  &kp JP_AMPERSAND  &kp JP_QUOTE      &Paren    &kp JP_RPAREN    &kp JP_EQUAL
+&trans           &trans         &trans           &trans         &trans        &trans      &trans  &kp JP_PIPE       &kp JP_TILDE      &Brace    &kp JP_RBRACE    &kp JP_UNDERSCORE
 &trans           &trans         &trans           &trans         &trans        &trans      &trans  &trans                                                                &kp JP_YEN
             >;
         };
