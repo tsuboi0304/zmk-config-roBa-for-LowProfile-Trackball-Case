@@ -160,10 +160,10 @@
 
         default_layer {
             bindings = <
-&kp Q         &mt LEFT_GUI W  &kp E         &kp R                   &kp T                                                                   &kp Y        &kp U                &lt 5 I          &kp O    &kp P
-&mt LSHIFT A  &mt LCTRL S     &kp D         &mt LEFT_CONTROL F      &kp G                   &kp LS(LG(S))                    &kp JP_PLUS    &kp H        &mt RIGHT_CONTROL J  &mt RIGHT_GUI K  &kp L    &mt RSHIFT MINUS
-&mt LCTRL Z   &kp X           &kp C         &kp V                   &kp B                   &tog 1                           &kp SEMICOLON  &kp N        &kp M                &kp COMMA        &kp DOT  &kp SLASH
-&UserName     &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 GRAVE  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_HENKAN      &kp BACKSPACE  &lt 2 ENTER                                                 &kp LC(RA(DEL))
+&kp Q         &mt LEFT_GUI W  &kp E         &kp R                   &kp T                                                                   &kp Y        &kp U                &lt 5 I    &kp O    &kp P
+&mt LSHIFT A  &mt LCTRL S     &kp D         &mt LEFT_CONTROL F      &kp G                   &kp LS(LG(S))                    &kp RG(L)      &kp H        &mt RIGHT_CONTROL J  &kp K      &kp L    &mt RSHIFT MINUS
+&mt LCTRL Z   &kp X           &kp C         &kp V                   &kp B                   &tog 1                           &kp SEMICOLON  &kp N        &kp M                &kp COMMA  &kp DOT  &kp SLASH
+&UserName     &kp LEFT_WIN    &kp LEFT_ALT  &lt_to_layer_0 6 GRAVE  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_HENKAN      &kp BACKSPACE  &lt 2 ENTER                                           &kp LC(RA(DEL))
             >;
 
             sensor-bindings = <&scroll_up_down>;
