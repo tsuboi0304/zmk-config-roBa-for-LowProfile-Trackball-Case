@@ -83,7 +83,7 @@
         };
 
         asterisk {
-            bindings = <&kp LS(SEMI)>;
+            bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
 
