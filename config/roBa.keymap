@@ -83,7 +83,7 @@
         };
 
         asterisk {
-            bindings = <&kp DOUBLE_QUOTES>;
+            bindings = <&kp LS(SEMI)>;
             key-positions = <24 25>;
         };
 
