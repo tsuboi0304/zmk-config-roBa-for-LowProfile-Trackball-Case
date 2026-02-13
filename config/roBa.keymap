@@ -83,7 +83,7 @@
         };
 
         asterisk {
-            bindings = <&kp JP_ASTERISK>;
+            bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <24 25>;
         };
 
