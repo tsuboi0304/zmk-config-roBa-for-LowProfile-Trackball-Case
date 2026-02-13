@@ -52,11 +52,6 @@
             key-positions = <12 13>;
         };
 
-        eq {
-            bindings = <&kp EQUAL>;
-            key-positions = <24 25>;
-        };
-
         left_click {
             bindings = <&mkp MB1>;
             key-positions = <18 19>;
@@ -83,7 +78,7 @@
         };
 
         asterisk {
-            bindings = <&kp EQUAL>;
+            bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <24 25>;
         };
 
