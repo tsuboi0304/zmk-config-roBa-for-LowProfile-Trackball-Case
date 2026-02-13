@@ -83,7 +83,7 @@
         };
 
         asterisk {
-            bindings = <&kp LS(NUMBER_8)>;
+            bindings = <&kp JP_ASTERISK>;
             key-positions = <24 25>;
         };
 
