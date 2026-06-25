@@ -22,6 +22,9 @@
         device = <&trackball>;
     };
 };
+&uicr {
+    nfct-pins-as-gpios;
+};
 
 &pinctrl {
     spi0_default: spi0_default {
