@@ -22,13 +22,22 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
+    input_processors {
+        zip_scroll_scaler: zip_scroll_scaler {
+            compatible = "zmk,input-processor-scaler";
+            #input-processor-cells = <2>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+            track-remainders;
+        };
+    };
 };
 &trackball_listener {
-    input-processors = <&zip_xy_scaler 1 4>;
+    input-processors = <&zip_xy_scaler 2 1>;
 
     scrl {
         layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_xcaler 1 4>;
     };
 };
 
