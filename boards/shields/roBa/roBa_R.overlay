@@ -64,6 +64,5 @@
         zephyr,axis-x = <INPUT_REL_Y>;
         zephyr,axis-y = <INPUT_REL_X>;
         invert-y;
-        cpi = <200>;
     };
 };
