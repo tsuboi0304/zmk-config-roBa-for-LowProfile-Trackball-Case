@@ -37,7 +37,7 @@
 
     scrl {
         layers = <5>;
-        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_xcaler 1 4>;
+        input-processors = <&zip_xy_to_scroll_mapper &zip_scroll_scaler 1 4>;
     };
 };
 
