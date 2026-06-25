@@ -10,6 +10,9 @@
             , <&gpio0 9 GPIO_ACTIVE_HIGH>
             ;
 };
+&uicr {
+    nfct-pins-as-gpios;
+};
 
 &left_encoder {
     status = "okay";
