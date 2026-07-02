@@ -38,6 +38,12 @@
     quick-tap-ms = <0>;
 };
 
+&msc {
+    acceleration-exponent = <0>;
+    time-to-max-speed-ms = <300>;
+    delay-ms = <0>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -133,12 +139,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
-    &msc {
-        acceleration-exponent = <0>;
-        time-to-max-speed-ms = <300>;
-        delay-ms = <0>;
-    };
 
         // 新しいスクロール動作の追加
 
