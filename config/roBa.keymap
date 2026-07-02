@@ -31,7 +31,7 @@
 
 // スクロール量を変更
 
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30
 
 &mt {
     flavor = "balanced";
