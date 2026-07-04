@@ -99,37 +99,37 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "TO_LAYER_0";
         };
 
-        UserName: UserName {
+        Password: Password {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp LS(B) &kp LS(J) &kp N0 &kp N2 &kp LS(Z) &kp N0 &kp N6 &kp N2 &kp N1>;
+            bindings = <&kp LS(Z) &kp A &kp Q &kp N1 &kp N2 &kp W &kp S &kp X &kp C &kp D>;
+            label = "PASSWORD";
         };
 
         Paren: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp ASTERISK &kp LEFT_PARENTHESIS &kp LEFT_ARROW>;
+            label = "NEW_MACRO";
         };
 
         Bracket: bracket {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_BRACKET &kp BACKSLASH &kp LEFT_ARROW>;
+            label = "BRACKET";
         };
 
         Brace: Brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RIGHT_BRACE &kp PIPE &kp LEFT_ARROW>;
+            label = "BRACE";
         };
 
-        Password: Password {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none &kp N &kp A &kp M &kp T &kp K &kp LEFT_BRACKET &kp N0 &kp N4>;
-        };
     };
 
     behaviors {
