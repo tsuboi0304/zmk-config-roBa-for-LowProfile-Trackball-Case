@@ -129,13 +129,13 @@
             bindings = <&kp RIGHT_BRACE &kp PIPE &kp LEFT_ARROW>;
             label = "BRACE";
         };
-
     };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&to_layer_0>;
+
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -146,6 +146,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
     };
@@ -156,9 +157,9 @@
         default_layer {
             bindings = <
 &kp Q         &mt LEFT_GUI W  &kp E           &kp R                   &kp T                                                                   &kp Y        &kp U                &lt 5 I          &kp O        &kp P
-&mt LSHIFT A  &mt LEFT_GUI S  &mt LEFT_ALT D  &mt LEFT_CONTROL F      &kp G                   &kp LS(LG(S))                    &kp RG(L)      &kp H        &mt RIGHT_CONTROL J  &mt RIGHT_ALT K  &mt LMETA L  &mt RSHIFT MINUS
+&mt LSHIFT A  &kp S           &mt LEFT_ALT D  &mt LEFT_CONTROL F      &kp G                   &kp LS(LG(S))                    &kp RG(L)      &kp H        &mt RIGHT_CONTROL J  &mt RIGHT_ALT K  &mt LMETA L  &mt RSHIFT MINUS
 &kp Z         &kp X           &kp C           &kp V                   &kp B                   &tog 1                           &kp SEMICOLON  &kp N        &kp M                &kp COMMA        &kp DOT      &kp SLASH
-&Password     &kp LEFT_WIN    &kp LEFT_ALT    &lt_to_layer_0 6 GRAVE  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_HENKAN      &kp BACKSPACE  &lt 2 ENTER                                                     &kp LC(RA(DEL))
+&Password     &kp LEFT_WIN    &kp LEFT_ALT    &lt_to_layer_0 6 GRAVE  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_HENKAN      &kp TAB        &lt 2 ENTER                                                     &kp LC(RA(DEL))
             >;
 
             sensor-bindings = <&scroll_up_down>;
