@@ -1,0 +1,71 @@
+description: |
+  Velocity based accelerating input processor.
+
+  Like zmk,input-processor-scaler, but the multiplier is not fixed: it is
+  chosen based on how much time passed since the previous matching event.
+  Events that arrive close together in time (fast rotation/movement) are
+  scaled up towards max-factor; events that arrive far apart (slow
+  rotation/movement) are scaled down towards min-factor. Between the two
+  configured time thresholds, the factor is interpolated linearly.
+
+  min-factor/max-factor are fixed-point values with one decimal digit,
+  i.e. a value of 10 means a multiplier of 1.0, and 50 means 5.0.
+
+  Example configuration:
+
+  #include <zephyr/dt-bindings/input/input-event-codes.h>
+
+  encoder_accel: encoder_accel {
+      compatible = "zmk,input-processor-accel-scaler";
+      #input-processor-cells = <0>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+      track-remainders;
+      min-factor = <20>;
+      max-factor = <60>;
+      fast-ms = <15>;
+      slow-ms = <80>;
+  };
+
+compatible: "zmk,input-processor-accel-scaler"
+
+include: ip_zero_param.yaml
+
+properties:
+  type:
+    type: int
+    default: 2 # INPUT_EV_REL
+    description: The event type to match, e.g. INPUT_EV_REL.
+
+  codes:
+    type: array
+    required: true
+    description: The specific codes within the given type to scale.
+
+  min-factor:
+    type: int
+    default: 10
+    description: |
+      Multiplier (x10) applied when consecutive matching events are at
+      least slow-ms apart. 10 = 1.0x (no change).
+
+  max-factor:
+    type: int
+    default: 30
+    description: |
+      Multiplier (x10) applied when consecutive matching events are at
+      most fast-ms apart. 30 = 3.0x.
+
+  fast-ms:
+    type: int
+    default: 15
+    description: |
+      Time (in milliseconds) between events at or below which max-factor
+      is applied.
+
+  slow-ms:
+    type: int
+    default: 80
+    description: |
+      Time (in milliseconds) between events at or above which min-factor
+      is applied. Must be greater than fast-ms.

@@ -21,12 +21,30 @@
         compatible = "zmk,input-listener";
         device = <&trackball>;
     };
+
+    // エンコーダを速く回すほどスクロール量を増やす自作input-processor
+    // (min-factor/max-factor は 10倍した固定小数点。20=2.0倍、60=6.0倍)。
+    // 効き方を変えたい場合はここの4つの数値を調整する:
+    //   min-factor: ゆっくり回した時の倍率
+    //   max-factor: 速く回した時の倍率
+    //   fast-ms   : これ以下の間隔(ms)ならmax-factorを適用
+    //   slow-ms   : これ以上の間隔(ms)ならmin-factorを適用
+    left_encoder_accel: left_encoder_accel {
+        compatible = "zmk,input-processor-accel-scaler";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL INPUT_REL_HWHEEL>;
+        track-remainders;
+        min-factor = <20>;
+        max-factor = <60>;
+        fast-ms = <15>;
+        slow-ms = <80>;
+    };
 };
 
 &left_encoder_listener {
     status = "okay";
-    // 1クリックあたりのスクロール量を2倍にする(3 1 でさらに増やせる)。
-    input-processors = <&zip_scroll_scaler 2 1>;
+    input-processors = <&left_encoder_accel>;
 };
 
 &pinctrl {
