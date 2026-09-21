@@ -98,7 +98,9 @@
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         b-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-        steps = <12>;
+        // steps = 1回転あたりのA/B信号の変化（エッジ）数 = パルス数 x 4
+        // CKW12(EC05E系, 12パルス/24クリック想定) → 12 x 4 = 48 
+        steps = <48>;
         status = "disabled";
     };
 
@@ -109,7 +111,9 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <10>;
+        // 1回転当たりのクリック（デテント）数に合わせる → 1クリック＝1トリガー
+        // steps(48) / triggers(24) = 2エッジで1トリガー。チャタリング1回では誤反応しない
+        triggers-per-rotation = <24>;
     };
 
     trackball_listener: trackball_listener {
