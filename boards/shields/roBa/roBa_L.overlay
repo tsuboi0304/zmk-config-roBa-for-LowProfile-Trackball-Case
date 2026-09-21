@@ -14,3 +14,21 @@
 &left_encoder {
     status = "okay";
 };
+
+// USBデバッグログ(roBa_L_with_logging ビルド)用。
+// seeeduino_xiao_ble のボード定義にはCDC ACM(仮想シリアル)ノードが
+// 含まれていないため、CONFIG_ZMK_USB_LOGGING を有効にするにはここで
+// 追加しておく必要がある。通常ビルドでは未使用のノードが増えるだけで
+// 影響はない。
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+        zephyr,shell-uart = &cdc_acm_uart0;
+    };
+};
+
+&usbd {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};

@@ -29,7 +29,13 @@ include:
    # 左手をPCにUSBケーブルで接続し、シリアルターミナル(115200bps)で
    # ec11ドライバのDelta(+1/-1)ログを見ながらエンコーダを回すと、
    # 取りこぼしや逆回転の誤検出が起きた瞬間を確認できる。
-   cmake-args: -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_SENSOR_LOG_LEVEL_DBG=y
+   # seeeduino_xiao_ble のデフォルト設定はSERIAL/CONSOLE類を無効化しているため、
+   # USBログを有効にするにはこれらも明示的に再度有効化する必要がある
+   # (CDC ACM用のdevicetreeノードは roBa_L.overlay 側で追加済み)。
+   cmake-args: >-
+     -DCONFIG_ZMK_USB_LOGGING=y
+     -DCONFIG_SERIAL=y -DCONFIG_CONSOLE=y -DCONFIG_UART_CONSOLE=y -DCONFIG_UART_INTERRUPT_DRIVEN=y
+     -DCONFIG_SENSOR_LOG_LEVEL_DBG=y
    artifact-name: roBa_L_with_logging
  - board: seeeduino_xiao_ble
    shield: settings_reset
