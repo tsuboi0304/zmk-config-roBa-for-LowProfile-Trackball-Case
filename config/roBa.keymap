@@ -34,12 +34,6 @@
 #define JP_EISU        LANGUAGE_2       // 英数
 #define JP_HANZEN      GRAVE            // 半角/全角
 
-// エンコーダ用スクロール量: 1クリックあたりのホイール量 x 50
-// (enc_msc の trigger-period-ms=20 に対して 50 x 20 / 1000 = 1.0 ノッチ)
-// 1クリック2ノッチにしたい場合は 100、3ノッチなら 150
-
-#define ENC_SCRL_VAL 50
-
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -138,43 +132,13 @@
         };
     };
 
-    // エンコーダ専用のスクロールデバイス（&msc とは独立。加速なし・定速）
-    enc_msc_listener: enc_msc_listener {
-        compatible = "zmk,input-listener";
-        device = <&enc_msc>;
-    };
-
     behaviors {
-        enc_msc: enc_msc {
-            compatible = "zmk,behavior-input-two-axis";
-            #binding-cells = <1>;
-            x-input-code = <INPUT_REL_HWHEEL>;
-            y-input-code = <INPUT_REL_WHEEL>;
-            trigger-period-ms = <20>;
-            time-to-max-speed-ms = <0>;
-            acceleration-exponent = <0>;
-            delay-ms = <0>;
-        };
-
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             bindings = <&mo>, <&to_layer_0>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-        };
-
-        // エンコーダでのスクロール
-        // tap-ms(30) を trigger-period-ms(20) の 1.5倍にして、
-        // 1回のタップで必ずちょうど1回だけスクロールが出るようにしている
-        // (20ms時点で1回出力 → 30msで離す → 40msの2回目は来ない)
-
-        scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
-            compatible = "zmk,behavior-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            bindings = <&enc_msc MOVE_Y(-ENC_SCRL_VAL)>, <&enc_msc MOVE_Y(ENC_SCRL_VAL)>;
-
-            tap-ms = <30>;
         };
     };
 
@@ -188,8 +152,6 @@
 &kp Z         &kp X           &kp C           &kp V                   &kp B                   &tog 1                           &kp SEMICOLON  &kp N        &kp M                &kp COMMA        &kp DOT      &kp SLASH
 &Password     &kp LEFT_WIN    &kp LEFT_ALT    &lt_to_layer_0 6 GRAVE  &lt_to_layer_0 4 SPACE  &lt_to_layer_0 5 INT_HENKAN      &kp TAB        &lt 2 ENTER                                                     &kp LC(RA(DEL))
             >;
-
-            sensor-bindings = <&scroll_up_down>;
         };
 
         FUNCTION {
@@ -199,8 +161,6 @@
 &kp Z             &kp X           &kp C           &kp V               &kp SEMICOLON  &trans      &kp NON_US_BACKSLASH  &kp G   &kp D                &kp M            &kp J            &kp B
 &trans            &trans          &trans          &trans              &trans         &trans      &trans                &trans                                                         &kp F12
             >;
-
-            sensor-bindings = <&scroll_up_down>;
         };
 
         NUM {
@@ -210,8 +170,6 @@
 &kp COMMA       &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_PLUS  &kp JP_ASTERISK      &trans  &trans            &kp JP_ASTERISK  &kp JP_BACKQUOTE  &kp JP_UNDERSCORE  &kp DELETE
 &kp LEFT_SHIFT  &kp NUMBER_0  &kp PERIOD    &trans        &trans       &trans               &trans  &trans                                                                  &trans
             >;
-
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         ARROW {
@@ -221,8 +179,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
-
-            sensor-bindings = <&scroll_up_down>;
         };
 
         MOUSEandARROW {

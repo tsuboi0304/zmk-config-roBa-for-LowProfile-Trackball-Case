@@ -11,8 +11,16 @@
             ;
 };
 
-&left_encoder {
+&left_encoder_qdec {
     status = "okay";
+};
+
+&left_encoder_split {
+    device = <&left_encoder_qdec>;
+    // 回転方向が逆に感じたら、上の gpio-qdec ノードの
+    // gpios = <...>, <...>; の2つの並びを入れ替えるか、
+    // ここに input-processors = <&zip_scroll_transform (INPUT_TRANSFORM_Y_INVERT)>;
+    // を追加する。
 };
 
 // USBデバッグログ(roBa_L_with_logging ビルド)用。
