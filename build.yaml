@@ -24,4 +24,12 @@ include:
  - board: seeeduino_xiao_ble
    shield: roBa_L
  - board: seeeduino_xiao_ble
+   shield: roBa_L
+   # ロータリーエンコーダのチャタリング調査用: USB CDC ACMでログを出力するビルド。
+   # 左手をPCにUSBケーブルで接続し、シリアルターミナル(115200bps)で
+   # ec11ドライバのDelta(+1/-1)ログを見ながらエンコーダを回すと、
+   # 取りこぼしや逆回転の誤検出が起きた瞬間を確認できる。
+   cmake-args: -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_SENSOR_LOG_LEVEL_DBG=y
+   artifact-name: roBa_L_with_logging
+ - board: seeeduino_xiao_ble
    shield: settings_reset

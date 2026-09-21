@@ -111,9 +111,11 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
-        // 1回転当たりのクリック（デテント）数に合わせる → 1クリック＝1トリガー
-        // steps(48) / triggers(24) = 2エッジで1トリガー。チャタリング1回では誤反応しない
-        triggers-per-rotation = <24>;
+        // 実機で確認した1回転あたりのクリック（デテント）数 = 12 に合わせる → 1クリック＝1トリガー
+        // steps(48) / triggers(12) = 4エッジ(1デテント分)で1トリガー
+        // (以前は24クリック相当の値になっており、1クリックで2回トリガーされ
+        //  NUMレイヤーの音量が1クリックで2段階動く原因になっていた)
+        triggers-per-rotation = <12>;
     };
 
     trackball_listener: trackball_listener {
