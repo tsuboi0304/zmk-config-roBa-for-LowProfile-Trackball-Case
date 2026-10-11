@@ -1,0 +1,10 @@
+# roBa custom input processors
+#
+# 回転速度に応じてスクロール量を増減させる自作 input-processor。
+# 標準の zmk,input-processor-scaler は固定倍率しか持たないため、
+# エンコーダを速く回したときに量が増える"加速"だけこちらで補う。
+
+config ZMK_INPUT_PROCESSOR_ACCEL_SCALER
+    bool "Velocity-based accelerating input processor"
+    default y
+    depends on DT_HAS_ZMK_INPUT_PROCESSOR_ACCEL_SCALER_ENABLED
