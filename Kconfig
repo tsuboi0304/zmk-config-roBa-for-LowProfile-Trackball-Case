@@ -8,3 +8,8 @@ config ZMK_INPUT_PROCESSOR_ACCEL_SCALER
     bool "Velocity-based accelerating input processor"
     default y
     depends on DT_HAS_ZMK_INPUT_PROCESSOR_ACCEL_SCALER_ENABLED
+
+config ZMK_INPUT_PROCESSOR_WHEEL_BEHAVIORS
+    bool "Wheel-to-behaviors input processor"
+    default y
+    depends on DT_HAS_ZMK_INPUT_PROCESSOR_WHEEL_BEHAVIORS_ENABLED

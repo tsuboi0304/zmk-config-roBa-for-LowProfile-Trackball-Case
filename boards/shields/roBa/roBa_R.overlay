@@ -1,5 +1,6 @@
 #include "roBa.dtsi"
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 &default_transform {
     col-offset = <6>;
@@ -42,9 +43,30 @@
     };
 };
 
+// NUMレイヤー(2)でエンコーダを回したときに音量を上げ下げする自作input-processor。
+// 上方向のホイール入力 → 音量アップ、下方向 → 音量ダウン。
+// 向きを逆にしたい場合は bindings の2つを入れ替える。
+/ {
+    left_encoder_volume: left_encoder_volume {
+        compatible = "zmk,input-processor-wheel-behaviors";
+        #input-processor-cells = <0>;
+        type = <INPUT_EV_REL>;
+        codes = <INPUT_REL_WHEEL>;
+        bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+        tap-ms = <10>;
+    };
+};
+
 &left_encoder_listener {
     status = "okay";
     input-processors = <&left_encoder_accel>;
+
+    // NUMレイヤー中だけは加速スクロールの代わりに音量操作にする
+    // (レイヤー番号を変えたら layers も合わせて変更する)
+    volume_on_num {
+        layers = <2>;
+        input-processors = <&left_encoder_volume>;
+    };
 };
 
 &pinctrl {

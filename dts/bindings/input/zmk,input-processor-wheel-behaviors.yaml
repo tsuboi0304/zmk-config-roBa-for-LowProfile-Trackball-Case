@@ -1,0 +1,37 @@
+description: |
+  Converts relative wheel input events into behavior taps, choosing the
+  behavior by the sign of the event value.
+
+  bindings must have exactly two entries: the first is tapped for positive
+  values (wheel up), the second for negative values (wheel down). The
+  original wheel event is consumed and not sent to the host.
+
+  Example (volume on the encoder):
+
+  enc_volume: enc_volume {
+      compatible = "zmk,input-processor-wheel-behaviors";
+      #input-processor-cells = <0>;
+      type = <INPUT_EV_REL>;
+      codes = <INPUT_REL_WHEEL>;
+      bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+      tap-ms = <10>;
+  };
+
+compatible: "zmk,input-processor-wheel-behaviors"
+
+include: ip_zero_param.yaml
+
+properties:
+  type:
+    type: int
+    default: 2 # INPUT_EV_REL
+  codes:
+    type: array
+    required: true
+  bindings:
+    type: phandle-array
+    required: true
+  tap-ms:
+    type: int
+    default: 10
+    description: How long each behavior is held before release.
