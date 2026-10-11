@@ -91,12 +91,12 @@
         };
 
         browserBack {
-            bindings = <&browser_back>;
+            bindings = <&kp LA(LEFT)>;
             key-positions = <30 31>;
         };
 
         browserForward {
-            bindings = <&browser_forward>;
+            bindings = <&kp RA(RIGHT)>;
             key-positions = <31 32>;
         };
     };
@@ -135,20 +135,6 @@
             #binding-cells = <0>;
             bindings = <&kp RIGHT_BRACE &kp PIPE &kp LEFT_ARROW>;
             label = "BRACE";
-        };
-
-        browser_back: browser_back {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ALT &kp LEFT>;
-            label = "BROWSER_BACK";
-        };
-
-        browser_forward: brower_forward {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp RIGHT_ALT &kp RIGHT>;
-            label = "BROWER_FORWARD";
         };
     };
 
